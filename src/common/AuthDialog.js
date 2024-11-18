@@ -20,16 +20,6 @@ export const AuthDialog = ({ open, onClose, isSignUpMode, toggleSignUpMode }) =>
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
 
-    const resetForm = () => {
-        setName('');
-        setMobile('');
-        setEmail('');
-        setPassword('');
-        setIsTermsChecked(false);
-        setEmailError('');
-        setPasswordError('');
-    };
-
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value);
