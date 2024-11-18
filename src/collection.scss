@@ -242,32 +242,41 @@
 }
 
 
-    .login_common {
-        display: grid;
-        grid-template-columns: 400px 1fr;
-        align-items: center;
-        text-align: center;
-        row-gap: 40px;
-        column-gap: 20px;
-        border-radius: 10px;
-        border: 2px solid white;
+.login_common {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    row-gap: 40px;
+    column-gap: 20px;
+    border-radius: 10px;
+    border: 2px solid white;
 
-        .login_img img{
-            width: 100%;
-            height: auto;
+    // .login_img img {
+    //     width: 100%;
+    //     height: auto;
+    // }
+
+    .login_form {
+        color: white;
+        padding: 30px;
+        box-shadow: rgba(99, 9, 255, 0.814) 0px 30px 60px -12px inset, rgba(99, 9, 255, 0.814) 0px 18px 36px -18px inset !important;
+        background-image: radial-gradient(circle at center center, transparent 0%, rgb(21, 1, 42) 99%), repeating-linear-gradient(0deg, rgba(163, 163, 163, 0.2) 0px, rgba(163, 163, 163, 0.2) 1px, transparent 1px, transparent 6px), repeating-linear-gradient(90deg, rgba(163, 163, 163, 0.2) 0px, rgba(163, 163, 163, 0.2) 1px, transparent 1px, transparent 6px), linear-gradient(90deg, rgb(56, 8, 105), rgb(21, 1, 42));
+
+        Textfield{
+            color: white;
+            border-color: white !important;
+        }
+        Button {
+            color: white;
+            width: 300px;
         }
 
-        .login_form{
-            Button{
-                color: white;
-            }
+        .form_action_btn {
+            display: flex;
 
-            .form_action_btn{
-                display: flex;
+            align-items: center;
+            justify-content: space-around;
 
-                align-items: center;
-                justify-content: space-around;
-
-            }
         }
     }
+}

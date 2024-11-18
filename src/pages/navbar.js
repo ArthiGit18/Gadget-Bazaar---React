@@ -213,11 +213,11 @@ export const Navbar = ({ aboutRef }) => {
             </div>
 
             {/* Dialog for Sign up/Sign In */}
-            <Dialog open={openDialog} onClose={handleDialogClose} maxWidth="md" fullWidth>
+            <Dialog open={openDialog} onClose={handleDialogClose} maxWidth="sm" fullWidth>
                 <DialogContent sx={{ padding: 0 }} className='login_common'>
-                    <div className='login_img'>
+                    {/* <div className='login_img'>
                         <img src="/assets/login/1.jpeg" alt="login view" />
-                    </div>
+                    </div> */}
                     <div className='login_form'>
                         <DialogTitle>{isSignUpMode ? 'Sign Up' : 'Sign In'}</DialogTitle>
                         {networkError && <Typography color="red">{networkError}</Typography>}
@@ -230,6 +230,25 @@ export const Navbar = ({ aboutRef }) => {
                                     margin="dense"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
+                                    InputProps={{
+                                        style: { color: 'white' }, // Change text color
+                                    }}
+                                    InputLabelProps={{
+                                        style: { color: 'white' }, // Change label color
+                                    }}
+                                    sx={{
+                                        '& .MuiOutlinedInput-root': {
+                                            '& fieldset': {
+                                                borderColor: 'white', // Default border color
+                                            },
+                                            '&:hover fieldset': {
+                                                borderColor: 'white', // Hover border color
+                                            },
+                                            '&.Mui-focused fieldset': {
+                                                borderColor: 'white', // Focused border color
+                                            },
+                                        },
+                                    }}
                                 />
                                 <TextField
                                     label="Mobile Number"
@@ -237,6 +256,25 @@ export const Navbar = ({ aboutRef }) => {
                                     margin="dense"
                                     value={mobile}
                                     onChange={(e) => setMobile(e.target.value)}
+                                    InputProps={{
+                                        style: { color: 'white' }, // Change text color
+                                    }}
+                                    InputLabelProps={{
+                                        style: { color: 'white' }, // Change label color
+                                    }}
+                                    sx={{
+                                        '& .MuiOutlinedInput-root': {
+                                            '& fieldset': {
+                                                borderColor: 'white', // Default border color
+                                            },
+                                            '&:hover fieldset': {
+                                                borderColor: 'white', // Hover border color
+                                            },
+                                            '&.Mui-focused fieldset': {
+                                                borderColor: 'white', // Focused border color
+                                            },
+                                        },
+                                    }}
                                 />
                             </>
                         )}
@@ -250,6 +288,25 @@ export const Navbar = ({ aboutRef }) => {
                             onChange={handleEmailChange}
                             error={!!emailError}
                             helperText={emailError}
+                            InputProps={{
+                                style: { color: 'white' }, // Change text color
+                            }}
+                            InputLabelProps={{
+                                style: { color: 'white' }, // Change label color
+                            }}
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {
+                                        borderColor: 'white', // Default border color
+                                    },
+                                    '&:hover fieldset': {
+                                        borderColor: 'white', // Hover border color
+                                    },
+                                    '&.Mui-focused fieldset': {
+                                        borderColor: 'white', // Focused border color
+                                    },
+                                },
+                            }}
                         />
                         <TextField
                             label="Password"
@@ -260,18 +317,37 @@ export const Navbar = ({ aboutRef }) => {
                             onChange={handlePasswordChange}
                             error={!!passwordError}
                             helperText={passwordError}
+                            InputProps={{
+                                style: { color: 'white' }, // Change text color
+                            }}
+                            InputLabelProps={{
+                                style: { color: 'white' }, // Change label color
+                            }}
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {
+                                        borderColor: 'white', // Default border color
+                                    },
+                                    '&:hover fieldset': {
+                                        borderColor: 'white', // Hover border color
+                                    },
+                                    '&.Mui-focused fieldset': {
+                                        borderColor: 'white', // Focused border color
+                                    },
+                                },
+                            }}
                         />
 
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        checked={isTermsChecked}
-                                        onChange={(e) => setIsTermsChecked(e.target.checked)}
-                                    />
-                                }
-                                label="I agree to the Terms & Conditions"
-                            />
-                        
+                        <FormControlLabel
+                            control={
+                                <Checkbox
+                                    checked={isTermsChecked}
+                                    onChange={(e) => setIsTermsChecked(e.target.checked)}
+                                />
+                            }
+                            label="I agree to the Terms & Conditions"
+                        />
+
 
                         <Button
                             variant="contained"
@@ -281,7 +357,7 @@ export const Navbar = ({ aboutRef }) => {
                         >
                             {isSignUpMode ? 'Sign Up' : 'Sign In'}
                         </Button>
-
+                        <hr style={{ margin: "20px 0" }}></hr>
                         <Button
                             variant="outlined"
                             sx={{ width: '100%' }}
@@ -290,7 +366,7 @@ export const Navbar = ({ aboutRef }) => {
                             Sign in with Google
                         </Button>
 
-                        <Typography variant="body2" sx={{ padding: '10px' }}>
+                        <Typography variant="body2" sx={{ padding: '10px', marginTop: "30px" }}>
                             {isSignUpMode ? 'Already have an account? ' : "Don't have an account? "}
                             <Button onClick={toggleSignUpMode}>
                                 {isSignUpMode ? 'Sign In' : 'Sign Up'}
