@@ -1,8 +1,8 @@
 import React from 'react';
 import CustomBreadcrumbs from '../../common/breadcrumbs';
-import { NavbarCommon } from '../../common/navbarCommon';
 import NewCollection from './newCollection';
 import Footer from '../footer';
+import { Navbar } from '../navbar';
 
 
 
@@ -11,7 +11,7 @@ const Product = () => {
     return (
         <div className='Product_collection'>
             <div className='Product_Header'>
-                <NavbarCommon />
+                <Navbar />
                 <div className='container breadcums'>
                     <CustomBreadcrumbs
                         heading="Product"

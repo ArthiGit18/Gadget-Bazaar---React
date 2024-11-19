@@ -55,12 +55,15 @@ export const Navbar = ({ aboutRef }) => {
     const [isFixed, setIsFixed] = useState(false);
     const [openDialog, setOpenDialog] = useState(false);
     const [isSignUpMode, setIsSignUpMode] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu visibility
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            const heroHeight = document.querySelector('.hero_wrapper').offsetHeight;
-            setIsFixed(window.scrollY > heroHeight);
+            const heroElement = document.querySelector('.hero_wrapper');
+            if (heroElement) {
+                const heroHeight = heroElement.offsetHeight;
+                setIsFixed(window.scrollY > heroHeight);
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -68,7 +71,7 @@ export const Navbar = ({ aboutRef }) => {
     }, []);
 
     const handleScrollToAbout = () => {
-        if (aboutRef.current) {
+        if (aboutRef?.current) {
             aboutRef.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
@@ -79,8 +82,7 @@ export const Navbar = ({ aboutRef }) => {
         setIsSignUpMode(false);
     };
     const toggleSignUpMode = () => setIsSignUpMode((prev) => !prev);
-
-    const toggleMenu = () => setIsMenuOpen((prev) => !prev); // Toggle mobile menu
+    const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
     return (
         <div className={`navbar_wrapper ${isFixed ? 'fixed' : ''}`}>
@@ -103,16 +105,16 @@ export const Navbar = ({ aboutRef }) => {
 
             {/* Hamburger menu for mobile */}
             <div className='nav_hamburger'>
-                <IconButton onClick={toggleMenu} edge="end">
-                    <MenuIcon sx={{color:"white"}} />
+                <IconButton onClick={toggleMenu} edge="end" aria-label="open menu">
+                    <MenuIcon sx={{ color: "white" }} />
                 </IconButton>
             </div>
 
             {/* Mobile menu slide down */}
             {isMenuOpen && (
                 <div className={`nav_mobile_menu ${isMenuOpen ? 'open' : ''}`}>
-                    <IconButton onClick={toggleMenu} edge="start">
-                        <CloseIcon sx={{color:"white"}} />
+                    <IconButton onClick={toggleMenu} edge="start" aria-label="close menu">
+                        <CloseIcon sx={{ color: "white" }} />
                     </IconButton>
                     <ul>
                         <li><a href="/">Home</a></li>

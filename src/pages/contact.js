@@ -1,13 +1,13 @@
 import React from 'react'
-import { NavbarCommon } from '../common/navbarCommon'
 import CustomBreadcrumbs from '../common/breadcrumbs'
 import Footer from './footer';
+import { Navbar } from './navbar';
 
 export const Contact = () => {
     return (
         <div className='contact_main'>
             <div className='Product_Header'>
-                <NavbarCommon />
+                <Navbar />
                 <div className='container breadcums'>
                     <CustomBreadcrumbs
                         heading="Contact"
