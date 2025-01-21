@@ -97,9 +97,9 @@ export const Navbar = ({ aboutRef }) => {
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="#about" onClick={(e) => { e.preventDefault(); handleScrollToAbout(); }}>About us</a></li>
-                    <li><a href="/product-list">Product</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contact">Customer Service</a></li>
+                    <li><a href="/">Product</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/">Customer Service</a></li>
                 </ul>
             </div>
 
@@ -119,9 +119,9 @@ export const Navbar = ({ aboutRef }) => {
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="#about" onClick={(e) => { e.preventDefault(); handleScrollToAbout(); }}>About us</a></li>
-                        <li><a href="/product-list">Product</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Customer Service</a></li>
+                        <li><a href="/">Product</a></li>
+                        <li><a href="/">Blog</a></li>
+                        <li><a href="/">Customer Service</a></li>
                     </ul>
                 </div>
             )}
